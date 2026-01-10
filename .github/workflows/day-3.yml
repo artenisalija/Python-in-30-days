@@ -3,7 +3,7 @@ name: Python Run Check
 on:
   push:
     branches:
-      - main  # only run on main branch
+      - "**" # Trigger on pushes to any branch
 
 jobs:
   run-python:

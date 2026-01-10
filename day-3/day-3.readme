@@ -1,0 +1,25 @@
+Python Day 3 Challenge
+
+This repository contains daily Python exercises, organized in separate folders for each day. Each file represents the solution for that day’s task.
+
+Structure & Purpose
+
+Each day is a separate folder with a Python file.
+
+The goal is to build practical Python skills incrementally.
+
+Automation Logic
+
+On every commit to main, a GitHub workflow runs all Python files to ensure they execute without errors.
+
+Only runtime errors are checked; style or formatting is ignored.
+
+If a file fails, the workflow highlights exactly which file has an issue.
+
+Daily Use
+
+Add new files in the corresponding day folder.
+
+Push to GitHub; the workflow automatically validates the code.
+
+This ensures continuous daily practice with instant feedback on execution.
