@@ -1,0 +1,61 @@
+📘 Python in 30 Days — DevOps & Python Practice
+
+This repository is my 30-day challenge to improve my Python and DevOps skills by building and automating small real-world scripts.
+
+Each day is committed in its own Git branch (day-1, day-2, etc.) to track progress and learning.
+
+🧠 What Day 1 Does
+
+Day 1 contains a Python script that prints:
+
+Python version
+
+Operating system
+
+Environment variables
+
+The script is automatically executed using GitHub Actions when code is pushed.
+
+⚙️ Tech Used
+
+Python
+
+Git & GitHub
+
+GitHub Actions (CI/CD)
+
+🚀 How It Works
+
+When code is pushed to a branch:
+
+GitHub checks out the repository
+
+Runs python --version
+
+Runs the Python script
+
+The output is visible in the Actions tab on GitHub.
+
+📂 Branch Structure
+
+Each day lives in its own branch:
+
+day-1
+day-2
+day-3
+...
+
+
+This shows continuous learning and daily progress.
+
+🎯 Goal
+
+Build strong foundations in:
+
+Python scripting
+
+Automation
+
+DevOps workflows
+
+while creating a visible public learning record.
