@@ -15,4 +15,4 @@ jobs:
         with:
           python-version: "3.11" # Specify Python version
 
-      - run: day-2/python day-2.py # Run the Day 2 Python script
+      - run: day-2/day-2.py # Run the Day 2 Python script
