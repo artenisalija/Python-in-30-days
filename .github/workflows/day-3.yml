@@ -1,4 +1,4 @@
-name: Python Run Check
+name: Day-3 Run All Python Files
 
 on:
   push:
