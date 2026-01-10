@@ -3,7 +3,7 @@ name: Day 2 Python Check
 on:
   push:
     branches:
-      - main # Trigger on pushes to the Day-2 branch
+      - main 
 
 jobs:
   run-day2:
