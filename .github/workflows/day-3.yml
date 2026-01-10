@@ -30,3 +30,6 @@ jobs:
     - name: Run tests
       run: |
         pytest || true  # optional, continues even if tests fail 
+    
+    - name: Lint all Python files
+      run: flake8 . || true
