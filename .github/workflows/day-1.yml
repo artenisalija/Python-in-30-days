@@ -2,7 +2,7 @@ name: Python CI
 
 on:
   push:
-    branches: [ "Day-1" ]
+    branches: [ "main" ]
 
 jobs:
   run-script:
