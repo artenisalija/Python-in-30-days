@@ -24,3 +24,5 @@ import os #printing os module to interact with the operating system
 print("Environment Variables")  #Displaying Environment Variables
 for key, value in os.environ.items():   #Iterating through environment variables
     print(f"{key}: {value}")    #Printing each environment variable and its value
+
+    #trigger Ci
