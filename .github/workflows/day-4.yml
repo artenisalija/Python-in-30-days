@@ -1,4 +1,4 @@
-name: Run Python
+name: Day-4 Run Python on push
 
 on: [push]
 
