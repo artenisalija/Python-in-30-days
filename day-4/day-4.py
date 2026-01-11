@@ -41,7 +41,7 @@ try:
 except EOFError:
     # This happens in CI/CD when input() fails
     log_message("No input provided. Using default age 18 for Entry.")
-    
+    user_age = 18  # default value for automated runs
 
 # We ask the pure validation function:
 # "Is this age allowed?"
