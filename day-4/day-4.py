@@ -1,3 +1,5 @@
+import sys
+
 # -------------------------------
 # REAL LIFE SCENARIO:
 # A person is trying to sign up for a gym.
@@ -26,20 +28,26 @@ def log_message(message):
 # -------------------------------
 
 # A user enters their age
-user_age = input("Please enter your age: ")
-if user_age.isdigit():
-    user_age = int(user_age) # Convert to integer
-else:
-    log_message("Invalid input. Please enter a numeric age.")
-    exit()
+try:
+    user_input = input("Please enter your age: ")
+
+    # Check if the input is numeric
+    if user_input.isdigit():
+        user_age = int(user_input)
+    else:
+        log_message("Invalid input. Please enter a numeric age.")
+        exit()  # Stop execution for invalid input
+
+except EOFError:
+    # This happens in CI/CD when input() fails
+    log_message("No input provided. Using default age 18 for Entry.")
+    user_age = age  # default value for automated runs
 
 # We ask the pure validation function:
 # "Is this age allowed?"
 if is_age_valid(user_age):
-
     # If yes, we log success
     log_message("Welcome to the gym! Your membership is active.")
-
 else:
     # If no, we log rejection
     log_message("Sorry, you must be 18 or older to join the gym.")
