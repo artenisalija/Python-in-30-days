@@ -1,0 +1,32 @@
+# Task Processor – Python + CI/CD
+
+This small project was built to practice how real backend and cloud systems handle errors safely.
+
+## What I learned
+
+### 1. Custom Errors
+I created my own error called `InvalidTaskError` so the program can clearly say when a task is invalid instead of using generic Python errors.
+
+### 2. Validation (Pure Function)
+The validation function only checks data and returns a result.  
+It does not print, log, or change anything. This makes it easy to test.
+
+### 3. Logging (Side Effects)
+When something goes wrong, a logging function writes the error into a file (`errors.log`).  
+This is how real systems keep records of problems.
+
+### 4. Graceful Error Handling
+The program does not crash when a task is invalid.  
+It catches the error, logs it, and returns a clean message instead.
+
+### 5. CI/CD Pipeline
+A GitHub Actions pipeline runs tests every time code is pushed.  
+If errors are not handled correctly, the pipeline fails.  
+This prevents broken code from being merged.
+
+## Why this matters
+This is how professional backend and cloud systems (like AWS services) are built:
+- clear errors
+- safe handling
+- automated testing
+- reliable deployments
