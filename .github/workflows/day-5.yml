@@ -18,9 +18,6 @@ jobs:
         run: pip install pytest
 
       - name: Run tests
-        run: pytest
-
-      - name: Run tests
         run: pytest day-5/test_day_5.py
         
       - name: Run on Day-5 script
