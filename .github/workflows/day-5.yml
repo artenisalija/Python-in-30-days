@@ -1,4 +1,4 @@
-name: Python CI
+name: Day-5 - Pipeline fails if errors aren’t handled
 
 on: [push]
 
