@@ -21,5 +21,8 @@ jobs:
         run: pytest
 
       - name: Run on Day-5 script
-        run: python day-5/day-5.py
+        run: python day-5/day_5.py
+
+      - name: Run tests
+        run: pytest day-5/test_day-5.py
 
