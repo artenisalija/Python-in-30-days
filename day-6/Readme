@@ -1,0 +1,32 @@
+# Day-6 Project
+
+## Description
+A simple Python project demonstrating modular programming, input handling, and basic business logic.
+
+## Project Structure
+
+
+
+day-6/
+├── core/ # Business logic
+│ └── logic.py
+├── utils/ # Helper functions (formatting, messages)
+│ └── helpers.py
+└── main.py # Entry point, coordinates core and utils
+
+## Technologies Used
+- **Python 3.11** – core programming language  
+- **Docker** – containerization for running the project anywhere  
+- **Modular Code Structure** – separates business logic (`core`) from helpers (`utils`)  
+- **CI-Friendly Input Handling** – supports interactive input and automation environments (like GitHub Actions)
+
+## How to Run
+
+### Locally
+```bash
+python main.py
+
+## Using Docker
+```bash
+docker build -t day6-app .
+docker run --name day-6 -it day6-app
