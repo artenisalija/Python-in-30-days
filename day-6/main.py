@@ -2,9 +2,10 @@ from core.logic import process_request
 from utils.helpers import format_result, error_message
 
 def main():
-    user_input = input("Enter a number: ")
+    
 
     try:
+        user_input = input("Enter a number: ")
         number = int(user_input)
     except EOFError:
         print("No input provided. Using default value 0.")
