@@ -1,21 +1,14 @@
-import sys
 from core.logic import process_request
 from utils.helpers import format_result, error_message
 
-
 def main():
-    # If a value was passed from the command line (CI, Docker, etc)
-    if len(sys.argv) > 1:
-        user_input = sys.argv[1]
-    else:
-        # Otherwise, allow interactive input (local use)
-        user_input = input("Enter a number: ")
+    user_input = input("Enter a number: ")
 
     try:
         number = int(user_input)
-    except ValueError:
-        print(error_message())
-        return
+    except EOFError:
+        print("No input provided. Using default value 0.")
+        user_input = "0"  # Or handle however you want
 
     result = process_request(number)
 
