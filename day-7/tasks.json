@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Cook pasta",
+    "priority": 2,
+    "done": false
+  },
+  {
+    "name": "Make salad",
+    "priority": 1,
+    "done": true
+  }
+]
