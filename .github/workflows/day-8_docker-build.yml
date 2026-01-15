@@ -25,7 +25,7 @@ jobs:
 
       # Step 4: Build day-8 image
       - name: Build day-8 Docker image
-        run: docker buildx build -f day-8/Dockerfile.day8 -t day-8-image day-8 --load
+        run: docker buildx build -f day-8/Dockerfile.day-8 -t day-8-image day-8 --load
 
       # Optional: Run containers to test
       - name: Test day-6 container
