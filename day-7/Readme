@@ -1,0 +1,40 @@
+🐍 Python Tasks with Dataclasses & JSON
+
+This project shows how to save and load tasks using Python.
+
+What I used
+
+Python
+
+@dataclass
+
+Type hints
+
+JSON
+
+What it does
+
+Reads tasks from a JSON file
+
+Turns them into Python objects
+
+Updates the tasks
+
+Saves them back to JSON
+
+Task model
+@dataclass
+class Task:
+    name: str
+    priority: int
+    done: bool
+
+Why this is useful
+
+This is how real programs store and manage data, like:
+
+To-do apps
+
+APIs
+
+Backend systems
