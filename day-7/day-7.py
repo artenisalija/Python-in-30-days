@@ -63,7 +63,7 @@ class Task:
 
 
 # Load JSON from file
-with open("tasks.json", "r") as f:
+with open("day-7/tasks.json", "r") as f:
     raw_tasks = json.load(f)
 
 # Convert JSON dictionaries into Task objects
@@ -83,7 +83,7 @@ for task in tasks:
 data = [asdict(task) for task in tasks]
 
 # Save back to JSON
-with open("tasks.json", "w") as f:
+with open("day7/tasks.json", "w") as f:
     json.dump(data, f, indent=2)
 
 print("✅ Tasks updated and saved.")
