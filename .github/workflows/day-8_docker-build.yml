@@ -1,4 +1,4 @@
-name: Docker Build
+name: Build Docker Images
 
 on:
   push:
@@ -11,15 +11,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Step 1: Get the repo code
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      # Step 2: Set up Docker Buildx
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
-      - name: Build Docker image
-        run: docker buildx build -t my-image-name . --load
+      # Step 3: Build day-6 image
+      - name: Build day-6 Docker image
+        run: docker buildx build -f day-6/Dockerfile.day-6 -t day-6-image day-6 --load
 
-      # Optional: run the container to test it
-      - name: Run container
-        run: docker run --rm my-image-name
+      # Step 4: Build day-8 image
+      - name: Build day-8 Docker image
+        run: docker buildx build -f day-8/Dockerfile.day8 -t day-8-image day-8 --load
+
+      # Optional: Run containers to test
+      - name: Test day-6 container
+        run: docker run --rm day-6-image
+
+      - name: Test day-8 container
+        run: docker run --rm day-8-image
