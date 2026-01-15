@@ -1,6 +1,7 @@
 import logging
 
-logging.basicConfig(filename='day-8.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(filename='day-8.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(name)s - %(message)s'
+) #formating ready for cloudwatch
 
 class Dishes:
     def __init__(self, breakfast, lunch, dinner):
