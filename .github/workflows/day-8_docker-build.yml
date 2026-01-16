@@ -7,35 +7,22 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+  build-and-test:
     runs-on: ubuntu-latest
-
     steps:
-      
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
-      
-      - name: Build day-6 Docker image
-        run: docker buildx build -f day-6/Dockerfile.day-6 -t day-6-image day-6 --load
-
-      
-      - name: Build day-8 Docker image
-        run: docker buildx build -f day-8/Dockerfile.day-8 -t day-8-image day-8 --load
-
-      - name: Build day-9 Docker image
-        run: docker build -f day-9/Dockerfile.day-9 -t day-9-test day-9 --load
-
-      # Optional: Run containers to test
-      - name: Test day-6 container
-        run: docker run --rm day-6-image
-
-      - name: Test day-8 container
-        run: docker run --rm day-8-image
-
-      - name: Test day-9 container
-        run: docker run --rm day-9-test
+      - name: Find and build all Dockerfiles
+        run: |
+          for file in $(find . -type f -name 'Dockerfile*'); do
+            DIR=$(dirname "$file")
+            IMAGE_NAME=$(basename "$DIR")-image
+            echo "Building $IMAGE_NAME from $file"
+            docker buildx build -f "$file" -t "$IMAGE_NAME" "$DIR" --load
+            echo "Testing $IMAGE_NAME"
+            docker run --rm "$IMAGE_NAME"
+          done
