@@ -1,0 +1,24 @@
+name: Python Tests with Docker
+
+on:
+  push:
+    branches:
+      - main       # optional: any branch you want to test
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1️⃣ Checkout the repo
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # 2️⃣ Build the Docker image
+      - name: Build Docker image
+        run: docker build -t day-9-test ./day-9
+
+      # 3️⃣ Run tests inside Docker
+      - name: Run tests
+        run: docker run --rm day-9-test
