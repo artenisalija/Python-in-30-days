@@ -1,4 +1,4 @@
-name: Python Tests with Docker
+name: Day-9 Python Tests with Docker
 
 on:
   push:
