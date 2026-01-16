@@ -1,4 +1,4 @@
-name: Build Docker Images
+name: Day-8 Build Docker Images
 
 on:
   push:
