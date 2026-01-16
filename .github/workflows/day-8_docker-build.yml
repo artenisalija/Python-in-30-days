@@ -35,4 +35,4 @@ jobs:
         run: docker run --rm day-8-image
 
       - name: Test day-9 container
-        run: docker run --rm day-9-test
+        run: docker run --rm day-9-image
