@@ -1,44 +1,27 @@
 Day 9 – Unit Testing with Docker & CI/CD
-What I did
 
-Created a simple Python function.
+Overview
+On this day, I created a simple Python function and wrote a test for it to verify whether the function **passes or fails** correctly.
 
-Wrote a test for the function to check whether it passes or fails.
+---
 
-Testing with Docker
-
-I don’t have pytest installed locally, so I used Docker.
+🧪 Testing with Docker
+Since `pytest` is not installed on my local system, I used **Docker** to handle testing.
 
 Inside the Docker container:
+- Installed pytest:
+  ```bash
+  pip install pytest
 
-Installed pytest using pip install pytest
 
-Ran the tests using CMD: pytest
+I created a GitHub Actions workflow that:
 
-CI/CD with GitHub Actions
+- Builds the Docker container
 
-Created a GitHub Actions workflow that:
+- Runs the container
 
-Builds the Docker container
+- Executes the tests automatically
 
-Runs the container
+- Fails the pipeline if any test fails
 
-Fails the pipeline if the tests fail
-
-Passes the pipeline if the tests succeed
-
-Improvements
-
-Fixed the Day 7 workflow so that:
-
-Every Dockerfile pushed to the repository is automatically built and run
-
-Technologies Used
-
-Python
-
-Pytest
-
-Docker
-
-GitHub Actions
+- Passes the pipeline if all tests succeed
