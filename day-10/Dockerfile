@@ -3,4 +3,4 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
-EntryPoint ["python", "day_10.py"]
+ENTRYPOINT ["python", "day_10.py"]
