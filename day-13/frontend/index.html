@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Food List</title>
+</head>
+<body>
+  <h2>🍔 Food List</h2>
+
+  <input id="foodInput" placeholder="Add food" />
+  <button onclick="addFood()">Add</button>
+
+  <ul id="list"></ul>
+
+  <script>
+    const API = "http://localhost:8000";
+
+    async function loadFoods() {
+      const res = await fetch(API + "/foods");
+      const foods = await res.json();
+      const list = document.getElementById("list");
+      list.innerHTML = "";
+      foods.forEach(f => {
+        const li = document.createElement("li");
+        li.innerHTML = `${f.name} <button onclick="del(${f.id})">❌</button>`;
+        list.appendChild(li);
+      });
+    }
+
+    async function addFood() {
+      const input = document.getElementById("foodInput");
+      if (!input.value) return;
+      await fetch(API + "/foods/" + input.value, { method: "POST" });
+      input.value = "";
+      loadFoods();
+    }
+
+    async function del(id) {
+      await fetch(API + "/foods/" + id, { method: "DELETE" });
+      loadFoods();
+    }
+
+    loadFoods();
+  </script>
+</body>
+</html>
