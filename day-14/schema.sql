@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS foods (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    calories INTEGER NOT NULL
+);
