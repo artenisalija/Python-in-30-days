@@ -8,4 +8,4 @@ app.include_router(users.router)
 
 @app.get("/")
 def root():
-    return {"message": "FastAPI Tutorial with SQLAlchemy"}
+    return {"message": "FastAPI Tutorial with SQLAlchemy and JWT Authentication"}
