@@ -1,0 +1,63 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: day-29-deployment
+  namespace: day-29
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: day-29
+  template:
+    metadata:
+      labels:
+        app: day-29
+    spec:
+      containers:
+      - name: hello-world
+        image: artenisal/day_26:0.0.1
+        ports:
+        - containerPort: 8000
+        volumeMounts:
+        - name: data-storage
+          mountPath: /app/data
+        env:
+        - name: APP_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: day-29-config
+              key: APP_NAME
+        - name: ENVIRONMENT
+          valueFrom:
+            configMapKeyRef:
+              name: day-29-config
+              key: ENVIRONMENT
+        - name: LOG_LEVEL
+          valueFrom:
+            configMapKeyRef:
+              name: day-29-config
+              key: LOG_LEVEL
+        - name: GREETING_MESSAGE
+          valueFrom:
+            configMapKeyRef:
+              name: day-29-config
+              key: GREETING_MESSAGE
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: day-29-secret
+              key: DB_PASSWORD
+        - name: API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: day-29-secret
+              key: API_KEY
+        - name: JWT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: day-29-secret
+              key: JWT_SECRET
+      volumes:
+      - name: data-storage
+        persistentVolumeClaim:
+          claimName: day-29-pvc
