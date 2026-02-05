@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: day29-app
+  namespace: day-29
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: day29-app
+  template:
+    metadata:
+      labels:
+        app: day29-app
+    spec:
+      containers:
+      - name: day29-app
+        image: artenisal/day-29:latest
+        ports:
+        - containerPort: 8000
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+          limits:
+            memory: "256Mi"
+            cpu: "200m"
