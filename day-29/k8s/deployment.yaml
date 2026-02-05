@@ -16,6 +16,7 @@ spec:
       containers:
       - name: day29-app
         image: artenisal/day-29:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 8000
         resources:
