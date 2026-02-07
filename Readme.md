@@ -289,5 +289,5 @@ docker run -p 8000:8000 day-xx
 
 **Author:** Artenis Alija  
 **Duration:** 30 Days  
-**Start Date:** [Your Start Date]  
-**End Date:** [Your End Date]
+**Start Date:** 8th January 2026 
+**End Date:** 7th February 2026
